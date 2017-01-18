@@ -4,39 +4,25 @@
  * and open the template in the editor.
  */
 package com.acme.edu;
-
-
-import java.io.RandomAccessFile;
-import java.util.*;
-import java.util.stream.Collectors;
-
 /**
  *
  * @author eugene
  */
 public class Main {
-    public static void main(String[] args) {
-        /*
-        Collectio<USer> с = userReader.readBatch();
-        adapter1.save(c);
+    public static void main(String[] args) throws ClassNotFoundException {
+        //1. Introspection
+        String obj = new String();
+        obj.getClass();        
+        Main.m(String.class);
         
-        //...
-        adatper1.readAndSave(userReader)
-        
-        ///...
-        Stream s = BatchedStream();
-        s.apply(new UserEntryHandler())
-        */
+        //2. Dynamic Class loading
+        Class.forName("Main22222");
                 
-        List<Integer> list = Arrays.asList(1,2,3, 6, 1,2,4);
-        list.parallelStream()
-            .filter(integer -> integer > 1)
-            .map(Object::toString)
-            .sorted(Comparator.reverseOrder())
-            .collect(Collectors.toList())
-                .forEach(System.out::println);
-            
-        
-                
+        //3. Dynamic/Virtual Proxies
+        //4. Byte-code manipulation / instrumenting : ByteBuddy, ASM (AST)
+    }
+    
+    static <T> T m(Class<T> a) {
+        return null;
     }
 }
