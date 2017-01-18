@@ -6,7 +6,9 @@
 package com.acme.edu;
 
 
+import java.io.RandomAccessFile;
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  *
@@ -14,8 +16,27 @@ import java.util.*;
  */
 public class Main {
     public static void main(String[] args) {
-        Collections.unmodifiableList(new ArrayList<>()).add("");
-        Arrays.<String>asList("");
-        Collections.emptyList();
+        /*
+        Collectio<USer> с = userReader.readBatch();
+        adapter1.save(c);
+        
+        //...
+        adatper1.readAndSave(userReader)
+        
+        ///...
+        Stream s = BatchedStream();
+        s.apply(new UserEntryHandler())
+        */
+                
+        List<Integer> list = Arrays.asList(1,2,3, 6, 1,2,4);
+        list.parallelStream()
+            .filter(integer -> integer > 1)
+            .map(Object::toString)
+            .sorted(Comparator.reverseOrder())
+            .collect(Collectors.toList())
+                .forEach(System.out::println);
+            
+        
+                
     }
 }
