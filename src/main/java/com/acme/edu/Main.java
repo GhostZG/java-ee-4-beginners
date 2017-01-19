@@ -5,42 +5,20 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class Main {
-    public static void main(String[] args) {
-        Controller c = new Controller(
-            new XXxWriter(),
-            new XxxReader()
-        );
-        c.doEtl();
-        c.doEtl();
+    public static void main(String[] args) throws ClassNotFoundException {
+        //1. Introspection
+        Object o = new Object();
+        o.getClass();
+        Class clazz = Object.class;
 
-        //Scope: request, session, aaplication, ....
-        c = new Controller(
-            new XXxWriter(),
-            new XxxReader()
-        );
-        c.doEtl();
+        //2. Actions
+//        clazz.newInstance();
 
-        c = new Controller() {
-            new xxxWriter(),
-            new ReaderFactory(),
-        }
+        //3. Dynamic classloading
+        Class.forName("p.p.p.C");
 
+        //4. Dynamic/Virtual Proxy: Interface + Code -> Byte-code Instrumenting
+
+        //5. Byte-code manipulation: AST -> meta-programming: ASM | ByteBuddy
     }
 }
-
-@Component
-@Bean
-@Scope
-class Controller {
-    @Inject @Named("") private Writer eriter;
-    @Autowired("ds_name") private DataSrouce ds;
-
-    @PostConstruct
-
-}
-
-<beans>
-    <bean id = "jhdkg" type =CsvWrter>
-        <constructor-arg>3
-    </b>
-</b>
